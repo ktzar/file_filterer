@@ -27,7 +27,8 @@ const App = () => {
     const { error, page, pageSize, filteredCount, displayFiles } = state;
     return (
         <div className="container">
-            <h1>List of files</h1>
+            <h1><img src={logo} className="App-logo" alt="logo" />List of files </h1>
+            
             { error && <div className="alert alert-danger">{error}</div>}
             <Pagination
                 pageSize={pageSize}

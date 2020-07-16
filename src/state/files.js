@@ -19,10 +19,10 @@ const getDisplayFilesCount = ({files, filter = ''}) => {
         .length;
 };
 
-const getDisplayFiles = ({files, sortedBy = 'id', descending = false, filter = '', page = 0, pageSize}) => {
+const getDisplayFiles = ({files, sortedBy = 'id', sortedDescend = false, filter = '', page = 0, pageSize}) => {
     return files
         .filter(f => !filter || f.name.includes(filter))
-        .sort(descending
+        .sort(sortedDescend
             ? (a, b) => a[sortedBy] > b[sortedBy] ? -1 : 1
             : (a, b) => a[sortedBy] > b[sortedBy] ? 1 : -1
         )
@@ -34,6 +34,7 @@ export const filesReducer = (state, action) => {
         const newState = {
             ...state,
             files: action.payload,
+            filteredCount: action.payload.length,
             loading: false
         };
         return { ...newState, displayFiles: getDisplayFiles(newState) };
