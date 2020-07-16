@@ -8,4 +8,12 @@ describe('Form component', () => {
         expect(wrapper.find('input').length).toBe(1);
         expect(wrapper.find('label').length).toBe(1);
     });
+
+    it('triggers onChange when typing', () => {
+        const spy = jest.fn();
+
+        const wrapper = shallow(<Form onChange={spy}/>);
+        wrapper.find('input').simulate('change', { target: { value: 'e'}});
+        expect(spy).toHaveBeenCalled();
+    });
 });

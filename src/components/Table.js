@@ -4,16 +4,16 @@ import { sizeFormatter, dateDistanceFormatter, dateFormatter } from '../utils/fo
 
 export const Table = ({files, onSortBy}) => (
     <table className="table table-hover">
-        <thead>
+        <thead><tr>
             <th>Id <SortButton onClick={() => onSortBy('id')} /></th>
             <th>Description <SortButton onClick={() => onSortBy('desc')} alphabetically /></th>
             <th>Filename <SortButton onClick={() => onSortBy('name')} alphabetically /></th>
             <th>Type <SortButton onClick={() => onSortBy('ext')} alphabetically /></th>
             <th width="120px">Created <SortButton onClick={() => onSortBy('created')} /></th>
             <th width="120px">Size <SortButton onClick={() => onSortBy('created')} /></th>
-        </thead>
+            </tr></thead>
         <tbody>
-        {files.map(f => (<tr>
+        {files.map((f,i) => (<tr key={i}>
             <td>{f.id}</td>
             <td>{f.desc}</td>
             <td>{f.name}</td>
