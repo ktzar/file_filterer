@@ -1,6 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Notes
 
-Below you will find some simple information about how to run the app and make changes.
+Due to time constraints I've not implemented fully tested code, but I've tested different parts of it to show skills. The rest should be a matter of putting more time to it.
 
 ## Available Scripts
 
